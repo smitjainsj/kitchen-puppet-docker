@@ -15,7 +15,7 @@ platforms:
       use_cache: true
 
 
-  - name: ubuntu16
+  - name: ubuntu
     driver_config:
       image: ubuntu:16.04
       use_cache: true
