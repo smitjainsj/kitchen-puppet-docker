@@ -5,7 +5,6 @@ driver:
 provisioner:
   name: puppet_apply
   mainfests_path: manifests
-  modules_path: modules
   require_chef_for_busser: true
 
 platforms:
@@ -27,4 +26,4 @@ platforms:
 
 suites:
   - name: default
-    manifest: site.pp
+    manifest: init.pp
