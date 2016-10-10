@@ -1,0 +1,27 @@
+I, [2016-10-10T06:51:20.807004 #12869]  INFO -- default-ubuntu16: -----> Creating <default-ubuntu16>...
+E, [2016-10-10T06:51:20.807189 #12869] ERROR -- default-ubuntu16: Create failed on instance <default-ubuntu16>.
+E, [2016-10-10T06:51:20.807267 #12869] ERROR -- default-ubuntu16: ------Exception-------
+E, [2016-10-10T06:51:20.807285 #12869] ERROR -- default-ubuntu16: Class: Kitchen::ActionFailed
+E, [2016-10-10T06:51:20.807296 #12869] ERROR -- default-ubuntu16: Message: Unknown platform 'ubuntu16'
+E, [2016-10-10T06:51:20.807305 #12869] ERROR -- default-ubuntu16: ----------------------
+E, [2016-10-10T06:51:20.807314 #12869] ERROR -- default-ubuntu16: ------Backtrace-------
+E, [2016-10-10T06:51:20.807323 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/kitchen-docker-2.6.0/lib/kitchen/driver/docker.rb:249:in `build_dockerfile'
+E, [2016-10-10T06:51:20.807333 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/kitchen-docker-2.6.0/lib/kitchen/driver/docker.rb:285:in `dockerfile'
+E, [2016-10-10T06:51:20.807343 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/kitchen-docker-2.6.0/lib/kitchen/driver/docker.rb:304:in `build_image'
+E, [2016-10-10T06:51:20.807352 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/kitchen-docker-2.6.0/lib/kitchen/driver/docker.rb:122:in `create'
+E, [2016-10-10T06:51:20.807362 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:456:in `public_send'
+E, [2016-10-10T06:51:20.807371 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:456:in `block in perform_action'
+E, [2016-10-10T06:51:20.807381 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:520:in `synchronize_or_call'
+E, [2016-10-10T06:51:20.807391 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:485:in `block in action'
+E, [2016-10-10T06:51:20.807401 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2016-10-10T06:51:20.807410 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:484:in `action'
+E, [2016-10-10T06:51:20.807420 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:456:in `perform_action'
+E, [2016-10-10T06:51:20.807429 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:366:in `create_action'
+E, [2016-10-10T06:51:20.807439 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:355:in `block in transition_to'
+E, [2016-10-10T06:51:20.807448 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:354:in `each'
+E, [2016-10-10T06:51:20.807458 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:354:in `transition_to'
+E, [2016-10-10T06:51:20.807467 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:138:in `converge'
+E, [2016-10-10T06:51:20.807476 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:201:in `public_send'
+E, [2016-10-10T06:51:20.807487 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:201:in `run_action_in_thread'
+E, [2016-10-10T06:51:20.807496 #12869] ERROR -- default-ubuntu16: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:173:in `block (2 levels) in run_action'
+E, [2016-10-10T06:51:20.807511 #12869] ERROR -- default-ubuntu16: ----End Backtrace-----

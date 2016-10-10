@@ -5,6 +5,7 @@ driver:
 provisioner:
   name: puppet_apply
   mainfests_path: manifests
+  modules_path: modules
   require_chef_for_busser: true
 
 platforms:

@@ -1,0 +1,8 @@
+---
+username: kitchen
+ssh_key: "/kitchen-puppet-docker/smit-testmodule/.kitchen/docker_id_rsa"
+image_id: 403db4543683
+container_id: 4106d37294b7490c6f0697f0d41e2411ccc1c76cd74fc25248e5d4cac7679513
+hostname: localhost
+port: 32770
+last_action: create

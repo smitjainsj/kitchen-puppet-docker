@@ -1,0 +1,3 @@
+---
+username: kitchen
+ssh_key: "/kitchen-puppet-docker/smit-testmodule/.kitchen/docker_id_rsa"

@@ -1,0 +1,406 @@
+I, [2016-10-10T06:50:40.942323 #12869]  INFO -- default-ubuntu: -----> Creating <default-ubuntu>...
+I, [2016-10-10T06:50:40.957480 #12869]  INFO -- default-ubuntu: Sending build context to Docker daemon  29.7 kB
+I, [2016-10-10T06:50:41.003771 #12869]  INFO -- default-ubuntu: Step 1 : FROM ubuntu:14.04
+I, [2016-10-10T06:50:41.004046 #12869]  INFO -- default-ubuntu:  ---> f2d8ce9fa988
+I, [2016-10-10T06:50:41.004153 #12869]  INFO -- default-ubuntu: Step 2 : RUN dpkg-divert --local --rename --add /sbin/initctl
+I, [2016-10-10T06:50:41.005094 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.005123 #12869]  INFO -- default-ubuntu:  ---> 85323a6ccc0a
+I, [2016-10-10T06:50:41.005140 #12869]  INFO -- default-ubuntu: Step 3 : RUN ln -sf /bin/true /sbin/initctl
+I, [2016-10-10T06:50:41.005380 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.005419 #12869]  INFO -- default-ubuntu:  ---> 104e1f114b10
+I, [2016-10-10T06:50:41.005575 #12869]  INFO -- default-ubuntu: Step 4 : ENV DEBIAN_FRONTEND noninteractive
+I, [2016-10-10T06:50:41.005755 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.005781 #12869]  INFO -- default-ubuntu:  ---> a5515cc15224
+I, [2016-10-10T06:50:41.005797 #12869]  INFO -- default-ubuntu: Step 5 : ENV container docker
+I, [2016-10-10T06:50:41.006053 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.006080 #12869]  INFO -- default-ubuntu:  ---> d0ca6acf9538
+I, [2016-10-10T06:50:41.006095 #12869]  INFO -- default-ubuntu: Step 6 : RUN apt-get update
+I, [2016-10-10T06:50:41.006358 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.006387 #12869]  INFO -- default-ubuntu:  ---> dbb33784f7c7
+I, [2016-10-10T06:50:41.006402 #12869]  INFO -- default-ubuntu: Step 7 : RUN apt-get install -y sudo openssh-server curl lsb-release
+I, [2016-10-10T06:50:41.006619 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.006646 #12869]  INFO -- default-ubuntu:  ---> e7f6b63bde16
+I, [2016-10-10T06:50:41.006662 #12869]  INFO -- default-ubuntu: Step 8 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2016-10-10T06:50:41.006944 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.006971 #12869]  INFO -- default-ubuntu:  ---> b38eb3dcd230
+I, [2016-10-10T06:50:41.006987 #12869]  INFO -- default-ubuntu: Step 9 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2016-10-10T06:50:41.007296 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.007337 #12869]  INFO -- default-ubuntu:  ---> 33951e34399b
+I, [2016-10-10T06:50:41.007353 #12869]  INFO -- default-ubuntu: Step 10 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2016-10-10T06:50:41.007658 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.007685 #12869]  INFO -- default-ubuntu:  ---> f32750bf3cbd
+I, [2016-10-10T06:50:41.007706 #12869]  INFO -- default-ubuntu: Step 11 : RUN mkdir -p /home/kitchen/.ssh
+I, [2016-10-10T06:50:41.008005 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.008054 #12869]  INFO -- default-ubuntu:  ---> 4be1d77be2bc
+I, [2016-10-10T06:50:41.008072 #12869]  INFO -- default-ubuntu: Step 12 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2016-10-10T06:50:41.008376 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.008402 #12869]  INFO -- default-ubuntu:  ---> 0055998fc74f
+I, [2016-10-10T06:50:41.008417 #12869]  INFO -- default-ubuntu: Step 13 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2016-10-10T06:50:41.008752 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.008779 #12869]  INFO -- default-ubuntu:  ---> 02ae61ea98be
+I, [2016-10-10T06:50:41.008794 #12869]  INFO -- default-ubuntu: Step 14 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2016-10-10T06:50:41.009113 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.009140 #12869]  INFO -- default-ubuntu:  ---> 525c75720db5
+I, [2016-10-10T06:50:41.009154 #12869]  INFO -- default-ubuntu: Step 15 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2016-10-10T06:50:41.009491 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.009551 #12869]  INFO -- default-ubuntu:  ---> 3279ab6a2114
+I, [2016-10-10T06:50:41.009571 #12869]  INFO -- default-ubuntu: Step 16 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2016-10-10T06:50:41.009910 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.009937 #12869]  INFO -- default-ubuntu:  ---> bf5661b0e614
+I, [2016-10-10T06:50:41.009953 #12869]  INFO -- default-ubuntu: Step 17 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQCj9fxxXEgIVkwILjnIHL85kdkaA2ekawTDtzyq4XEqA5mGwOmE74gt2CqNXMUlyIbGv4VDMBwkvJkBeUDTA8Mr7EGsnJ\+w0g0ItYXfr71mRuKrvGg5jzvdSQ2xFQU/wbi/wjHwQ5RxoI1yBUIy2ChfUIUinYGLpJFWzPOaWLGJJYo8cVphAh4YEKK2rS\+bUKDGW06ykBqE5p3YaYhIm\+6\+otiQ8uNTVjiebwn1k\+G1ZD84KUR3xYO/lj8YhfCTleJjxLx3Yy10TNWcx7ZUV8rdIG1b4vPbKQOTA3o3OvXsWfJj9zlNDpwxXf8taAi2\+SbvTuoKLH73fLwhdDw4Ex2r\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2016-10-10T06:50:41.010323 #12869]  INFO -- default-ubuntu:  ---> Using cache
+I, [2016-10-10T06:50:41.010351 #12869]  INFO -- default-ubuntu:  ---> 403db4543683
+I, [2016-10-10T06:50:41.010365 #12869]  INFO -- default-ubuntu: Successfully built 403db4543683
+I, [2016-10-10T06:50:41.092105 #12869]  INFO -- default-ubuntu: 4106d37294b7490c6f0697f0d41e2411ccc1c76cd74fc25248e5d4cac7679513
+I, [2016-10-10T06:50:41.274339 #12869]  INFO -- default-ubuntu: 0.0.0.0:32770
+I, [2016-10-10T06:50:41.348579 #12869]  INFO -- default-ubuntu: [SSH] Established
+I, [2016-10-10T06:50:41.350086 #12869]  INFO -- default-ubuntu: Finished creating <default-ubuntu> (0m0.41s).
+I, [2016-10-10T06:50:41.350185 #12869]  INFO -- default-ubuntu: -----> Converging <default-ubuntu>...
+I, [2016-10-10T06:50:41.350692 #12869]  INFO -- default-ubuntu: Preparing files for transfer
+I, [2016-10-10T06:50:41.350741 #12869]  INFO -- default-ubuntu: Preparing modules
+W, [2016-10-10T06:50:41.350883 #12869]  WARN -- default-ubuntu: Modulefile found but this is depricated, ignoring it, see https://tickets.puppetlabs.com/browse/PUP-1188
+I, [2016-10-10T06:50:41.350950 #12869]  INFO -- default-ubuntu: Preparing manifests
+I, [2016-10-10T06:50:41.351257 #12869]  INFO -- default-ubuntu: Preparing files
+I, [2016-10-10T06:50:41.351357 #12869]  INFO -- default-ubuntu: nothing to do for files
+I, [2016-10-10T06:50:41.351513 #12869]  INFO -- default-ubuntu: Preparing spec files
+I, [2016-10-10T06:50:41.351758 #12869]  INFO -- default-ubuntu: Finished Preparing files for transfer
+I, [2016-10-10T06:50:41.351966 #12869]  INFO -- default-ubuntu: Installing puppet on ubuntu
+I, [2016-10-10T06:50:41.352097 #12869]  INFO -- default-ubuntu: Install busser on ubuntu
+I, [2016-10-10T06:50:42.672398 #12869]  INFO -- default-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 41%Reading package lists... Done
+I, [2016-10-10T06:50:42.882852 #12869]  INFO -- default-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2016-10-10T06:50:42.883450 #12869]  INFO -- default-ubuntu: Reading state information... 0%Reading state information... 1%Reading state information... Done
+I, [2016-10-10T06:50:42.916533 #12869]  INFO -- default-ubuntu: wget is already the newest version.
+I, [2016-10-10T06:50:42.916596 #12869]  INFO -- default-ubuntu: wget set to manually installed.
+I, [2016-10-10T06:50:42.963072 #12869]  INFO -- default-ubuntu: 0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+I, [2016-10-10T06:50:42.970248 #12869]  INFO -- default-ubuntu: --2016-10-10 06:50:42--  http://apt.puppetlabs.com/puppetlabs-release-precise.deb
+I, [2016-10-10T06:50:42.974919 #12869]  INFO -- default-ubuntu: Resolving apt.puppetlabs.com (apt.puppetlabs.com)... 198.58.114.168, 2600:3c00::f03c:91ff:fe69:6bf0
+I, [2016-10-10T06:50:43.009484 #12869]  INFO -- default-ubuntu: Connecting to apt.puppetlabs.com (apt.puppetlabs.com)|198.58.114.168|:80... connected.
+I, [2016-10-10T06:50:43.044251 #12869]  INFO -- default-ubuntu: HTTP request sent, awaiting response... 200 OK
+I, [2016-10-10T06:50:43.044648 #12869]  INFO -- default-ubuntu: Length: 16946 (17K) [application/x-debian-package]
+I, [2016-10-10T06:50:43.044697 #12869]  INFO -- default-ubuntu: Saving to: 'puppetlabs-release-precise.deb'
+I, [2016-10-10T06:50:43.044721 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:50:43.078504 #12869]  INFO -- default-ubuntu:  0% [                                       ] 0           --.-K/s              100%[======================================>] 16,946      --.-K/s   in 0.03s   
+I, [2016-10-10T06:50:43.078563 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:50:43.078865 #12869]  INFO -- default-ubuntu: 2016-10-10 06:50:43 (490 KB/s) - 'puppetlabs-release-precise.deb' saved [16946/16946]
+I, [2016-10-10T06:50:43.078914 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:50:43.115968 #12869]  INFO -- default-ubuntu: Selecting previously unselected package puppetlabs-release.
+I, [2016-10-10T06:50:43.124953 #12869]  INFO -- default-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 16023 files and directories currently installed.)
+I, [2016-10-10T06:50:43.125221 #12869]  INFO -- default-ubuntu: Preparing to unpack puppetlabs-release-precise.deb ...
+I, [2016-10-10T06:50:43.130359 #12869]  INFO -- default-ubuntu: Unpacking puppetlabs-release (1.1-1) ...
+I, [2016-10-10T06:50:43.151861 #12869]  INFO -- default-ubuntu: Setting up puppetlabs-release (1.1-1) ...
+I, [2016-10-10T06:50:45.018986 #12869]  INFO -- default-ubuntu: 0% [Working]            Ign http://apt.puppetlabs.com precise InRelease
+I, [2016-10-10T06:50:45.053443 #12869]  INFO -- default-ubuntu:             10% [Connecting to archive.ubuntu.com (91.189.88.149)]                                                      Get:1 http://apt.puppetlabs.com precise Release.gpg [836 B]
+I, [2016-10-10T06:50:45.088419 #12869]  INFO -- default-ubuntu:                                                       100% [Waiting for headers] [1 Release.gpg 836 B/836 B 100%]                                                           100% [Waiting for headers]                          Get:2 http://apt.puppetlabs.com precise Release [54.4 kB]
+I, [2016-10-10T06:50:45.104488 #12869]  INFO -- default-ubuntu:                           27% [Waiting for headers] [2 Release 14.3 kB/54.4 kB 26%]                                                         Ign http://archive.ubuntu.com trusty InRelease
+I, [2016-10-10T06:50:45.324908 #12869]  INFO -- default-ubuntu:                                                          27% [2 Release 14.3 kB/54.4 kB 26%]                                   100% [Waiting for headers]                          Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+I, [2016-10-10T06:50:45.366263 #12869]  INFO -- default-ubuntu:                           81% [3 InRelease 43.1 kB/65.9 kB 65%]                                     81% [2 Release gpgv 54.4 kB] [3 InRelease 43.1 kB/65.9 kB 65%]                                                              81% [3 InRelease 43.1 kB/65.9 kB 65%]                                     100% [Waiting for headers]                          100% [3 InRelease gpgv 65.9 kB] [Waiting for headers] [Waiting for headers]                                                                           Get:4 http://apt.puppetlabs.com precise/main Sources [92.7 kB]
+I, [2016-10-10T06:50:45.580945 #12869]  INFO -- default-ubuntu:                                                                            88% [3 InRelease gpgv 65.9 kB] [Waiting for headers] [4 Sources 66.3 kB/92.7 kB                                                                               100% [3 InRelease gpgv 65.9 kB] [Waiting for headers]                                                     Get:5 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]
+I, [2016-10-10T06:50:45.581172 #12869]  INFO -- default-ubuntu:                                                      Hit http://archive.ubuntu.com trusty Release.gpg
+I, [2016-10-10T06:50:45.616150 #12869]  INFO -- default-ubuntu:                                                      100% [Working]              100% [4 Sources 92.7 kB] [Waiting for headers]                                              100% [4 Sources 92.7 kB] [5 InRelease gpgv 65.9 kB] [Waiting for headers]                                                                         100% [5 InRelease gpgv 65.9 kB] [Waiting for headers] [Waiting for headers]                                                                           Get:6 http://apt.puppetlabs.com precise/dependencies Sources [9250 B]
+I, [2016-10-10T06:50:45.652788 #12869]  INFO -- default-ubuntu:                                                                            100% [5 InRelease gpgv 65.9 kB] [Waiting for headers] [6 Sources 9250 B/9250 B                                                                                100% [5 InRelease gpgv 65.9 kB] [Waiting for headers] [Waiting for headers]                                                                           100% [6 Sources 0 B] [5 InRelease gpgv 65.9 kB] [Waiting for headers] [Waiting                                                                                100% [5 InRelease gpgv 65.9 kB] [Waiting for headers] [Waiting for headers]                                                                           Get:7 http://apt.puppetlabs.com precise/main amd64 Packages [107 kB]
+I, [2016-10-10T06:50:45.661600 #12869]  INFO -- default-ubuntu:                                                                            100% [5 InRelease gpgv 65.9 kB] [Waiting for headers] [7 Packages 107 kB/107 kB                                                                               100% [5 InRelease gpgv 65.9 kB] [Waiting for headers]                                                     100% [7 Packages 0 B] [5 InRelease gpgv 65.9 kB] [Waiting for headers] [Waiting                                                                               Get:8 http://archive.ubuntu.com trusty-updates/main Sources [474 kB]
+I, [2016-10-10T06:50:45.687836 #12869]  INFO -- default-ubuntu: 61% [7 Packages 107 kB] [5 InRelease gpgv 65.9 kB] [8 Sources 133 kB/474 kB 28%                                                                               61% [7 Packages 107 kB] [8 Sources 133 kB/474 kB 28%] [Waiting for headers]                                                                           61% [8 Sources 133 kB/474 kB 28%] [Waiting for headers]                                                       Get:9 http://apt.puppetlabs.com precise/dependencies amd64 Packages [6421 B]
+I, [2016-10-10T06:50:45.889172 #12869]  INFO -- default-ubuntu:                                                        61% [8 Sources 133 kB/474 kB 28%] [9 Packages 6421 B/6421 B 100%]                                                                 61% [8 Sources 133 kB/474 kB 28%]                                 61% [9 Packages 0 B] [8 Sources 133 kB/474 kB 28%]                                                  61% [8 Sources 133 kB/474 kB 28%]                                 100% [Working]              100% [8 Sources 474 kB] [Waiting for headers]                                             100% [Waiting for headers]                          Get:10 http://archive.ubuntu.com trusty-updates/restricted Sources [5247 B]
+I, [2016-10-10T06:50:45.967826 #12869]  INFO -- default-ubuntu:                           100% [10 Sources 5247 B/5247 B 100%]                                    100% [Working]              100% [10 Sources 5247 B] [Waiting for headers]                                              100% [Waiting for headers]                          Get:11 http://archive.ubuntu.com trusty-updates/universe Sources [209 kB]
+I, [2016-10-10T06:50:46.049036 #12869]  INFO -- default-ubuntu:                           83% [11 Sources 20.5 kB/209 kB 10%]                                   100% [Working]              100% [11 Sources 209 kB] [Waiting for headers]                                              100% [Waiting for headers]                          Get:12 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1125 kB]
+I, [2016-10-10T06:50:46.288819 #12869]  INFO -- default-ubuntu:                           50% [12 Packages 8192 B/1125 kB 1%]                                   100% [Working]              100% [12 Packages 1125 kB] [Waiting for headers]                                                Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [23.5 kB]
+I, [2016-10-10T06:50:46.366055 #12869]  INFO -- default-ubuntu:                                                 99% [12 Packages 1125 kB] [13 Packages 0 B/23.5 kB 0%]                                                      100% [12 Packages 1125 kB]100% [Waiting for headers]                          100% [13 Packages 23.5 kB] [Waiting for headers]                                                100% [Waiting for headers]                          Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [485 kB]
+I, [2016-10-10T06:50:46.600377 #12869]  INFO -- default-ubuntu:                           83% [14 Packages 16.4 kB/485 kB 3%]                                   100% [Working]              100% [14 Packages 485 kB] [Waiting for headers]                                               100% [Waiting for headers]                          Hit http://archive.ubuntu.com trusty Release
+I, [2016-10-10T06:50:46.677799 #12869]  INFO -- default-ubuntu:                           100% [Working]              100% [Release gpgv 58.5 kB] [Waiting for headers]                                                 100% [Waiting for headers]                          Get:15 http://archive.ubuntu.com trusty-security/main Sources [153 kB]
+I, [2016-10-10T06:50:46.757936 #12869]  INFO -- default-ubuntu:                           95% [15 Sources 21.4 kB/153 kB 14%]                                   100% [Working]              100% [15 Sources 153 kB] [Waiting for headers]                                              100% [Waiting for headers]                          Get:16 http://archive.ubuntu.com trusty-security/restricted Sources [3944 B]
+I, [2016-10-10T06:50:46.834815 #12869]  INFO -- default-ubuntu:                           100% [16 Sources 3944 B/3944 B 100%]                                    100% [Working]              100% [16 Sources 3944 B] [Waiting for headers]                                              100% [Waiting for headers]                          Get:17 http://archive.ubuntu.com trusty-security/universe Sources [51.3 kB]
+I, [2016-10-10T06:50:46.912852 #12869]  INFO -- default-ubuntu:                           98% [17 Sources 5580 B/51.3 kB 11%]                                   100% [Working]              100% [17 Sources 51.3 kB] [Waiting for headers]                                               100% [Waiting for headers]                          Get:18 http://archive.ubuntu.com trusty-security/main amd64 Packages [662 kB]
+I, [2016-10-10T06:50:47.145288 #12869]  INFO -- default-ubuntu:                           82% [18 Packages 19.5 kB/662 kB 3%]                                   100% [Working]              100% [18 Packages 662 kB] [Waiting for headers]                                               100% [Waiting for headers]                          Get:19 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [20.2 kB]
+I, [2016-10-10T06:50:47.224356 #12869]  INFO -- default-ubuntu:                           100% [19 Packages 12.7 kB/20.2 kB 63%]                                      100% [Working]              100% [19 Packages 20.2 kB] [Waiting for headers]                                                100% [Waiting for headers]                          Get:20 http://archive.ubuntu.com trusty-security/universe amd64 Packages [180 kB]
+I, [2016-10-10T06:50:47.306060 #12869]  INFO -- default-ubuntu:                           96% [20 Packages 25.7 kB/180 kB 14%]                                    100% [Working]              100% [20 Packages 180 kB] [Waiting for headers]                                               100% [Waiting for headers]                          Hit http://archive.ubuntu.com trusty/main Sources
+I, [2016-10-10T06:50:47.493772 #12869]  INFO -- default-ubuntu:                           100% [Working]              100% [Sources 0 B] [Waiting for headers]                                        100% [Waiting for headers]                          Hit http://archive.ubuntu.com trusty/restricted Sources
+I, [2016-10-10T06:50:47.576387 #12869]  INFO -- default-ubuntu:                           100% [Working]              100% [Sources 0 B] [Waiting for headers]                                        100% [Waiting for headers]                          Hit http://archive.ubuntu.com trusty/universe Sources
+I, [2016-10-10T06:50:47.647469 #12869]  INFO -- default-ubuntu:                           100% [Working]              100% [Sources 0 B] [Waiting for headers]                                        Hit http://archive.ubuntu.com trusty/main amd64 Packages
+I, [2016-10-10T06:50:47.722377 #12869]  INFO -- default-ubuntu:                                         100% [Sources 7926 kB]                      Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+I, [2016-10-10T06:50:47.805687 #12869]  INFO -- default-ubuntu: 100% [Sources 7926 kB]                      Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+I, [2016-10-10T06:50:49.029275 #12869]  INFO -- default-ubuntu: 100% [Sources 7926 kB]                      100% [Working]              100% [Packages 0 B]                   100% [Working]              100% [Packages 0 B]                   100% [Working]              100% [Packages 0 B]                   100% [Packages 7589 kB]                       100% [Working]              Fetched 3795 kB in 4s (930 kB/s)
+I, [2016-10-10T06:50:50.374827 #12869]  INFO -- default-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 76%Reading package lists... 76%Reading package lists... 78%Reading package lists... 78%Reading package lists... Done
+I, [2016-10-10T06:50:51.796198 #12869]  INFO -- default-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 76%Reading package lists... 76%Reading package lists... 78%Reading package lists... 78%Reading package lists... Done
+I, [2016-10-10T06:50:52.013124 #12869]  INFO -- default-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2016-10-10T06:50:52.013693 #12869]  INFO -- default-ubuntu: Reading state information... 0%Reading state information... 1%Reading state information... Done
+I, [2016-10-10T06:50:52.089116 #12869]  INFO -- default-ubuntu: The following extra packages will be installed:
+I, [2016-10-10T06:50:52.089184 #12869]  INFO -- default-ubuntu:   dmidecode libpci3 libruby1.9.1 libyaml-0-2 pciutils ruby ruby1.9.1 virt-what
+I, [2016-10-10T06:50:52.089508 #12869]  INFO -- default-ubuntu: Suggested packages:
+I, [2016-10-10T06:50:52.089573 #12869]  INFO -- default-ubuntu:   ri ruby-dev ruby1.9.1-examples ri1.9.1 graphviz ruby1.9.1-dev ruby-switch
+I, [2016-10-10T06:50:52.090048 #12869]  INFO -- default-ubuntu: The following NEW packages will be installed:
+I, [2016-10-10T06:50:52.090090 #12869]  INFO -- default-ubuntu:   dmidecode facter libpci3 libruby1.9.1 libyaml-0-2 pciutils ruby ruby1.9.1
+I, [2016-10-10T06:50:52.090373 #12869]  INFO -- default-ubuntu:   virt-what
+I, [2016-10-10T06:50:52.093359 #12869]  INFO -- default-ubuntu: 0 upgraded, 9 newly installed, 0 to remove and 3 not upgraded.
+I, [2016-10-10T06:50:52.398139 #12869]  INFO -- default-ubuntu: Need to get 3190 kB of archives.
+I, [2016-10-10T06:50:52.398203 #12869]  INFO -- default-ubuntu: After this operation, 14.8 MB of additional disk space will be used.
+I, [2016-10-10T06:50:52.638776 #12869]  INFO -- default-ubuntu: 0% [Working]            Get:1 http://apt.puppetlabs.com/ precise/main facter all 2.4.6-1puppetlabs1 [87.8 kB]
+I, [2016-10-10T06:50:52.721634 #12869]  INFO -- default-ubuntu:             0% [Connecting to archive.ubuntu.com (91.189.88.162)] [1 facter 14.2 kB/87.8 kB                                                                               3% [Waiting for headers]                        Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpci3 amd64 1:3.2.1-1ubuntu5.1 [26.3 kB]
+I, [2016-10-10T06:50:52.872894 #12869]  INFO -- default-ubuntu:                         3% [2 libpci3 14.2 kB/26.3 kB 54%]                                  4% [Working]            Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libyaml-0-2 amd64 0.1.4-3ubuntu3.1 [48.1 kB]
+I, [2016-10-10T06:50:53.024831 #12869]  INFO -- default-ubuntu:             4% [3 libyaml-0-2 8407 B/48.1 kB 17%]                                     5% [Working]            Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main dmidecode amd64 2.12-2 [45.9 kB]
+I, [2016-10-10T06:50:53.102790 #12869]  INFO -- default-ubuntu:             6% [4 dmidecode 32.8 kB/45.9 kB 71%]                                    7% [Working]            Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main pciutils amd64 1:3.2.1-1ubuntu5.1 [282 kB]
+I, [2016-10-10T06:50:53.330383 #12869]  INFO -- default-ubuntu:             7% [5 pciutils 0 B/282 kB 0%]                             15% [Working]             Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [2645 kB]
+I, [2016-10-10T06:50:53.869497 #12869]  INFO -- default-ubuntu:              16% [6 libruby1.9.1 24.3 kB/2645 kB 1%]                                       98% [Working]             Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [35.6 kB]
+I, [2016-10-10T06:50:53.946259 #12869]  INFO -- default-ubuntu:              99% [7 ruby1.9.1 31.1 kB/35.6 kB 87%]                                     99% [Working]             Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main ruby all 1:1.9.3.4 [5334 B]
+I, [2016-10-10T06:50:54.022922 #12869]  INFO -- default-ubuntu:              100% [8 ruby 5334 B/5334 B 100%]                                100% [Working]              Get:9 http://archive.ubuntu.com/ubuntu/ trusty/universe virt-what amd64 1.13-1 [13.6 kB]
+I, [2016-10-10T06:50:54.023750 #12869]  INFO -- default-ubuntu:               100% [9 virt-what 13.6 kB/13.6 kB 100%]                                       100% [Working]              Fetched 3190 kB in 1s (2191 kB/s)
+I, [2016-10-10T06:50:54.134285 #12869]  INFO -- default-ubuntu: perl: warning: Setting locale failed.
+I, [2016-10-10T06:50:54.134659 #12869]  INFO -- default-ubuntu: perl: warning: Please check that your locale settings:
+I, [2016-10-10T06:50:54.135039 #12869]  INFO -- default-ubuntu: 	LANGUAGE = (unset),
+I, [2016-10-10T06:50:54.135528 #12869]  INFO -- default-ubuntu: 	LC_ALL = (unset),
+I, [2016-10-10T06:50:54.135880 #12869]  INFO -- default-ubuntu: 	LANG = "en_US.UTF-8"
+I, [2016-10-10T06:50:54.136191 #12869]  INFO -- default-ubuntu:     are supported and installed on your system.
+I, [2016-10-10T06:50:54.136484 #12869]  INFO -- default-ubuntu: perl: warning: Falling back to the standard locale ("C").
+I, [2016-10-10T06:50:54.169394 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_CTYPE to default locale: No such file or directory
+I, [2016-10-10T06:50:54.169551 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+I, [2016-10-10T06:50:54.169843 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_ALL to default locale: No such file or directory
+I, [2016-10-10T06:50:56.501962 #12869]  INFO -- default-ubuntu: Selecting previously unselected package libpci3:amd64.
+I, [2016-10-10T06:50:56.509643 #12869]  INFO -- default-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 16030 files and directories currently installed.)
+I, [2016-10-10T06:50:56.510034 #12869]  INFO -- default-ubuntu: Preparing to unpack .../libpci3_1%3a3.2.1-1ubuntu5.1_amd64.deb ...
+I, [2016-10-10T06:50:56.514193 #12869]  INFO -- default-ubuntu: Unpacking libpci3:amd64 (1:3.2.1-1ubuntu5.1) ...
+I, [2016-10-10T06:50:56.555409 #12869]  INFO -- default-ubuntu: Selecting previously unselected package libyaml-0-2:amd64.
+I, [2016-10-10T06:50:56.555849 #12869]  INFO -- default-ubuntu: Preparing to unpack .../libyaml-0-2_0.1.4-3ubuntu3.1_amd64.deb ...
+I, [2016-10-10T06:50:56.560574 #12869]  INFO -- default-ubuntu: Unpacking libyaml-0-2:amd64 (0.1.4-3ubuntu3.1) ...
+I, [2016-10-10T06:50:56.595246 #12869]  INFO -- default-ubuntu: Selecting previously unselected package dmidecode.
+I, [2016-10-10T06:50:56.595685 #12869]  INFO -- default-ubuntu: Preparing to unpack .../dmidecode_2.12-2_amd64.deb ...
+I, [2016-10-10T06:50:56.600527 #12869]  INFO -- default-ubuntu: Unpacking dmidecode (2.12-2) ...
+I, [2016-10-10T06:50:56.641674 #12869]  INFO -- default-ubuntu: Selecting previously unselected package pciutils.
+I, [2016-10-10T06:50:56.643117 #12869]  INFO -- default-ubuntu: Preparing to unpack .../pciutils_1%3a3.2.1-1ubuntu5.1_amd64.deb ...
+I, [2016-10-10T06:50:56.650825 #12869]  INFO -- default-ubuntu: Unpacking pciutils (1:3.2.1-1ubuntu5.1) ...
+I, [2016-10-10T06:50:56.738490 #12869]  INFO -- default-ubuntu: Selecting previously unselected package libruby1.9.1.
+I, [2016-10-10T06:50:56.738895 #12869]  INFO -- default-ubuntu: Preparing to unpack .../libruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+I, [2016-10-10T06:50:56.742912 #12869]  INFO -- default-ubuntu: Unpacking libruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+I, [2016-10-10T06:50:57.068409 #12869]  INFO -- default-ubuntu: Selecting previously unselected package ruby1.9.1.
+I, [2016-10-10T06:50:57.069842 #12869]  INFO -- default-ubuntu: Preparing to unpack .../ruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+I, [2016-10-10T06:50:57.075365 #12869]  INFO -- default-ubuntu: Unpacking ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+I, [2016-10-10T06:50:57.107955 #12869]  INFO -- default-ubuntu: Selecting previously unselected package ruby.
+I, [2016-10-10T06:50:57.109230 #12869]  INFO -- default-ubuntu: Preparing to unpack .../ruby_1%3a1.9.3.4_all.deb ...
+I, [2016-10-10T06:50:57.114043 #12869]  INFO -- default-ubuntu: Unpacking ruby (1:1.9.3.4) ...
+I, [2016-10-10T06:50:57.145781 #12869]  INFO -- default-ubuntu: Selecting previously unselected package virt-what.
+I, [2016-10-10T06:50:57.146183 #12869]  INFO -- default-ubuntu: Preparing to unpack .../virt-what_1.13-1_amd64.deb ...
+I, [2016-10-10T06:50:57.150233 #12869]  INFO -- default-ubuntu: Unpacking virt-what (1.13-1) ...
+I, [2016-10-10T06:50:57.181324 #12869]  INFO -- default-ubuntu: Selecting previously unselected package facter.
+I, [2016-10-10T06:50:57.181645 #12869]  INFO -- default-ubuntu: Preparing to unpack .../facter_2.4.6-1puppetlabs1_all.deb ...
+I, [2016-10-10T06:50:57.186759 #12869]  INFO -- default-ubuntu: Unpacking facter (2.4.6-1puppetlabs1) ...
+I, [2016-10-10T06:50:57.328139 #12869]  INFO -- default-ubuntu: Setting up libpci3:amd64 (1:3.2.1-1ubuntu5.1) ...
+I, [2016-10-10T06:50:57.353248 #12869]  INFO -- default-ubuntu: Setting up libyaml-0-2:amd64 (0.1.4-3ubuntu3.1) ...
+I, [2016-10-10T06:50:57.372804 #12869]  INFO -- default-ubuntu: Setting up dmidecode (2.12-2) ...
+I, [2016-10-10T06:50:57.386410 #12869]  INFO -- default-ubuntu: Setting up pciutils (1:3.2.1-1ubuntu5.1) ...
+I, [2016-10-10T06:50:57.402089 #12869]  INFO -- default-ubuntu: Setting up virt-what (1.13-1) ...
+I, [2016-10-10T06:50:57.416071 #12869]  INFO -- default-ubuntu: Setting up ruby (1:1.9.3.4) ...
+I, [2016-10-10T06:50:57.429871 #12869]  INFO -- default-ubuntu: Setting up facter (2.4.6-1puppetlabs1) ...
+I, [2016-10-10T06:50:57.444517 #12869]  INFO -- default-ubuntu: Setting up ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+I, [2016-10-10T06:50:57.460201 #12869]  INFO -- default-ubuntu: Setting up libruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+I, [2016-10-10T06:50:57.487882 #12869]  INFO -- default-ubuntu: Processing triggers for libc-bin (2.19-0ubuntu6.9) ...
+I, [2016-10-10T06:50:58.952814 #12869]  INFO -- default-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 75%Reading package lists... 75%Reading package lists... 78%Reading package lists... 78%Reading package lists... Done
+I, [2016-10-10T06:50:59.163702 #12869]  INFO -- default-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2016-10-10T06:50:59.164268 #12869]  INFO -- default-ubuntu: Reading state information... 0%Reading state information... 1%Reading state information... Done
+I, [2016-10-10T06:50:59.236661 #12869]  INFO -- default-ubuntu: The following extra packages will be installed:
+I, [2016-10-10T06:50:59.236732 #12869]  INFO -- default-ubuntu:   augeas-lenses debconf-utils hiera libaugeas-ruby libaugeas0 libxml2
+I, [2016-10-10T06:50:59.236763 #12869]  INFO -- default-ubuntu:   ruby-augeas ruby-json ruby-shadow sgml-base xml-core
+I, [2016-10-10T06:50:59.237127 #12869]  INFO -- default-ubuntu: Suggested packages:
+I, [2016-10-10T06:50:59.237159 #12869]  INFO -- default-ubuntu:   augeas-doc augeas-tools ruby-selinux libselinux-ruby1.8 librrd-ruby1.9.1
+I, [2016-10-10T06:50:59.237175 #12869]  INFO -- default-ubuntu:   librrd-ruby1.8 sgml-base-doc debhelper
+I, [2016-10-10T06:50:59.237696 #12869]  INFO -- default-ubuntu: The following NEW packages will be installed:
+I, [2016-10-10T06:50:59.237739 #12869]  INFO -- default-ubuntu:   augeas-lenses debconf-utils hiera libaugeas-ruby libaugeas0 libxml2
+I, [2016-10-10T06:50:59.237760 #12869]  INFO -- default-ubuntu:   puppet-common ruby-augeas ruby-json ruby-shadow sgml-base xml-core
+I, [2016-10-10T06:50:59.240631 #12869]  INFO -- default-ubuntu: 0 upgraded, 12 newly installed, 0 to remove and 3 not upgraded.
+I, [2016-10-10T06:50:59.518770 #12869]  INFO -- default-ubuntu: Need to get 2799 kB of archives.
+I, [2016-10-10T06:50:59.518835 #12869]  INFO -- default-ubuntu: After this operation, 12.7 MB of additional disk space will be used.
+I, [2016-10-10T06:50:59.759162 #12869]  INFO -- default-ubuntu: 0% [Working]            Get:1 http://apt.puppetlabs.com/ precise/main hiera all 1.3.4-1puppetlabs1 [12.9 kB]
+I, [2016-10-10T06:50:59.793800 #12869]  INFO -- default-ubuntu:             0% [Connecting to archive.ubuntu.com (91.189.88.161)] [1 hiera 12.9 kB/12.9 kB                                                                                0% [Connecting to archive.ubuntu.com (91.189.88.161)] [Waiting for headers]                                                                           Get:2 http://apt.puppetlabs.com/ precise/main puppet-common all 3.8.7-1puppetlabs1 [1682 kB]
+I, [2016-10-10T06:50:59.852830 #12869]  INFO -- default-ubuntu:                                                                            1% [Waiting for headers] [2 puppet-common 28.7 kB/1682 kB 2%]                                                             Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2 amd64 2.9.1+dfsg1-3ubuntu4.8 [573 kB]
+I, [2016-10-10T06:51:00.339886 #12869]  INFO -- default-ubuntu:                                                              4% [3 libxml2 14.2 kB/573 kB 2%] [2 puppet-common 86.6 kB/1682 kB 5%]                                                                     62% [3 libxml2 43.2 kB/573 kB 8%]                                 81% [Working]             Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main sgml-base all 1.26+nmu4ubuntu1 [12.5 kB]
+I, [2016-10-10T06:51:00.421370 #12869]  INFO -- default-ubuntu:              81% [4 sgml-base 12.5 kB/12.5 kB 100%]                                      81% [Waiting for headers]                         Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main xml-core all 0.13+nmu2 [23.3 kB]
+I, [2016-10-10T06:51:00.503866 #12869]  INFO -- default-ubuntu:                          82% [5 xml-core 3759 B/23.3 kB 16%]                                   82% [Working]             Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main augeas-lenses all 1.2.0-0ubuntu1.2 [229 kB]
+I, [2016-10-10T06:51:00.749044 #12869]  INFO -- default-ubuntu:              83% [6 augeas-lenses 12.3 kB/229 kB 5%]                                       90% [Working]             Get:7 http://archive.ubuntu.com/ubuntu/ trusty/main debconf-utils all 1.5.51ubuntu2 [57.4 kB]
+I, [2016-10-10T06:51:00.832040 #12869]  INFO -- default-ubuntu:              91% [7 debconf-utils 12.8 kB/57.4 kB 22%]                                         93% [Working]             Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libaugeas0 amd64 1.2.0-0ubuntu1.2 [135 kB]
+I, [2016-10-10T06:51:00.916141 #12869]  INFO -- default-ubuntu:              93% [8 libaugeas0 20.6 kB/135 kB 15%]                                     97% [Working]             Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main ruby-augeas amd64 0.5.0-2 [13.2 kB]
+I, [2016-10-10T06:51:00.997548 #12869]  INFO -- default-ubuntu:              98% [9 ruby-augeas 13.2 kB/13.2 kB 100%]                                        98% [Waiting for headers]                         Get:10 http://archive.ubuntu.com/ubuntu/ trusty/universe libaugeas-ruby all 0.5.0-2 [1394 B]
+I, [2016-10-10T06:51:01.078817 #12869]  INFO -- default-ubuntu:                          98% [10 libaugeas-ruby 1394 B/1394 B 100%]                                          98% [Waiting for headers]                         Get:11 http://archive.ubuntu.com/ubuntu/ trusty/main ruby-shadow amd64 2.2.0-1 [11.2 kB]
+I, [2016-10-10T06:51:01.160769 #12869]  INFO -- default-ubuntu:                          98% [11 ruby-shadow 11.2 kB/11.2 kB 100%]                                         98% [Working]             Get:12 http://archive.ubuntu.com/ubuntu/ trusty/main ruby-json amd64 1.8.0-1build1 [49.0 kB]
+I, [2016-10-10T06:51:01.161808 #12869]  INFO -- default-ubuntu:              99% [12 ruby-json 25.8 kB/49.0 kB 53%]                                      100% [Working]              Fetched 2799 kB in 1s (1901 kB/s)
+I, [2016-10-10T06:51:01.294970 #12869]  INFO -- default-ubuntu: perl: warning: Setting locale failed.
+I, [2016-10-10T06:51:01.295049 #12869]  INFO -- default-ubuntu: perl: warning: Please check that your locale settings:
+I, [2016-10-10T06:51:01.295177 #12869]  INFO -- default-ubuntu: 	LANGUAGE = (unset),
+I, [2016-10-10T06:51:01.295202 #12869]  INFO -- default-ubuntu: 	LC_ALL = (unset),
+I, [2016-10-10T06:51:01.295217 #12869]  INFO -- default-ubuntu: 	LANG = "en_US.UTF-8"
+I, [2016-10-10T06:51:01.295329 #12869]  INFO -- default-ubuntu:     are supported and installed on your system.
+I, [2016-10-10T06:51:01.295352 #12869]  INFO -- default-ubuntu: perl: warning: Falling back to the standard locale ("C").
+I, [2016-10-10T06:51:01.326399 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_CTYPE to default locale: No such file or directory
+I, [2016-10-10T06:51:01.326541 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+I, [2016-10-10T06:51:01.326871 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_ALL to default locale: No such file or directory
+I, [2016-10-10T06:51:03.973271 #12869]  INFO -- default-ubuntu: Selecting previously unselected package libxml2:amd64.
+I, [2016-10-10T06:51:03.982756 #12869]  INFO -- default-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 17132 files and directories currently installed.)
+I, [2016-10-10T06:51:03.983588 #12869]  INFO -- default-ubuntu: Preparing to unpack .../libxml2_2.9.1+dfsg1-3ubuntu4.8_amd64.deb ...
+I, [2016-10-10T06:51:03.988455 #12869]  INFO -- default-ubuntu: Unpacking libxml2:amd64 (2.9.1+dfsg1-3ubuntu4.8) ...
+I, [2016-10-10T06:51:04.081432 #12869]  INFO -- default-ubuntu: Selecting previously unselected package sgml-base.
+I, [2016-10-10T06:51:04.082536 #12869]  INFO -- default-ubuntu: Preparing to unpack .../sgml-base_1.26+nmu4ubuntu1_all.deb ...
+I, [2016-10-10T06:51:04.090007 #12869]  INFO -- default-ubuntu: Unpacking sgml-base (1.26+nmu4ubuntu1) ...
+I, [2016-10-10T06:51:04.150144 #12869]  INFO -- default-ubuntu: Selecting previously unselected package xml-core.
+I, [2016-10-10T06:51:04.151412 #12869]  INFO -- default-ubuntu: Preparing to unpack .../xml-core_0.13+nmu2_all.deb ...
+I, [2016-10-10T06:51:04.157098 #12869]  INFO -- default-ubuntu: Unpacking xml-core (0.13+nmu2) ...
+I, [2016-10-10T06:51:04.192303 #12869]  INFO -- default-ubuntu: Selecting previously unselected package augeas-lenses.
+I, [2016-10-10T06:51:04.193907 #12869]  INFO -- default-ubuntu: Preparing to unpack .../augeas-lenses_1.2.0-0ubuntu1.2_all.deb ...
+I, [2016-10-10T06:51:04.198714 #12869]  INFO -- default-ubuntu: Unpacking augeas-lenses (1.2.0-0ubuntu1.2) ...
+I, [2016-10-10T06:51:04.280035 #12869]  INFO -- default-ubuntu: Selecting previously unselected package debconf-utils.
+I, [2016-10-10T06:51:04.281457 #12869]  INFO -- default-ubuntu: Preparing to unpack .../debconf-utils_1.5.51ubuntu2_all.deb ...
+I, [2016-10-10T06:51:04.285776 #12869]  INFO -- default-ubuntu: Unpacking debconf-utils (1.5.51ubuntu2) ...
+I, [2016-10-10T06:51:04.332237 #12869]  INFO -- default-ubuntu: Selecting previously unselected package libaugeas0.
+I, [2016-10-10T06:51:04.333534 #12869]  INFO -- default-ubuntu: Preparing to unpack .../libaugeas0_1.2.0-0ubuntu1.2_amd64.deb ...
+I, [2016-10-10T06:51:04.338189 #12869]  INFO -- default-ubuntu: Unpacking libaugeas0 (1.2.0-0ubuntu1.2) ...
+I, [2016-10-10T06:51:04.382448 #12869]  INFO -- default-ubuntu: Selecting previously unselected package ruby-augeas.
+I, [2016-10-10T06:51:04.382815 #12869]  INFO -- default-ubuntu: Preparing to unpack .../ruby-augeas_0.5.0-2_amd64.deb ...
+I, [2016-10-10T06:51:04.387545 #12869]  INFO -- default-ubuntu: Unpacking ruby-augeas (0.5.0-2) ...
+I, [2016-10-10T06:51:04.418172 #12869]  INFO -- default-ubuntu: Selecting previously unselected package libaugeas-ruby.
+I, [2016-10-10T06:51:04.419732 #12869]  INFO -- default-ubuntu: Preparing to unpack .../libaugeas-ruby_0.5.0-2_all.deb ...
+I, [2016-10-10T06:51:04.424392 #12869]  INFO -- default-ubuntu: Unpacking libaugeas-ruby (0.5.0-2) ...
+I, [2016-10-10T06:51:04.457326 #12869]  INFO -- default-ubuntu: Selecting previously unselected package ruby-shadow.
+I, [2016-10-10T06:51:04.457653 #12869]  INFO -- default-ubuntu: Preparing to unpack .../ruby-shadow_2.2.0-1_amd64.deb ...
+I, [2016-10-10T06:51:04.462573 #12869]  INFO -- default-ubuntu: Unpacking ruby-shadow (2.2.0-1) ...
+I, [2016-10-10T06:51:04.493847 #12869]  INFO -- default-ubuntu: Selecting previously unselected package ruby-json.
+I, [2016-10-10T06:51:04.495100 #12869]  INFO -- default-ubuntu: Preparing to unpack .../ruby-json_1.8.0-1build1_amd64.deb ...
+I, [2016-10-10T06:51:04.499848 #12869]  INFO -- default-ubuntu: Unpacking ruby-json (1.8.0-1build1) ...
+I, [2016-10-10T06:51:04.542141 #12869]  INFO -- default-ubuntu: Selecting previously unselected package hiera.
+I, [2016-10-10T06:51:04.543451 #12869]  INFO -- default-ubuntu: Preparing to unpack .../hiera_1.3.4-1puppetlabs1_all.deb ...
+I, [2016-10-10T06:51:04.552099 #12869]  INFO -- default-ubuntu: Unpacking hiera (1.3.4-1puppetlabs1) ...
+I, [2016-10-10T06:51:04.593719 #12869]  INFO -- default-ubuntu: Selecting previously unselected package puppet-common.
+I, [2016-10-10T06:51:04.595071 #12869]  INFO -- default-ubuntu: Preparing to unpack .../puppet-common_3.8.7-1puppetlabs1_all.deb ...
+I, [2016-10-10T06:51:04.599646 #12869]  INFO -- default-ubuntu: Unpacking puppet-common (3.8.7-1puppetlabs1) ...
+I, [2016-10-10T06:51:04.960356 #12869]  INFO -- default-ubuntu: Setting up libxml2:amd64 (2.9.1+dfsg1-3ubuntu4.8) ...
+I, [2016-10-10T06:51:04.986524 #12869]  INFO -- default-ubuntu: Setting up sgml-base (1.26+nmu4ubuntu1) ...
+I, [2016-10-10T06:51:05.022247 #12869]  INFO -- default-ubuntu: Setting up xml-core (0.13+nmu2) ...
+I, [2016-10-10T06:51:05.196021 #12869]  INFO -- default-ubuntu: Setting up augeas-lenses (1.2.0-0ubuntu1.2) ...
+I, [2016-10-10T06:51:05.210024 #12869]  INFO -- default-ubuntu: Setting up debconf-utils (1.5.51ubuntu2) ...
+I, [2016-10-10T06:51:05.224246 #12869]  INFO -- default-ubuntu: Setting up libaugeas0 (1.2.0-0ubuntu1.2) ...
+I, [2016-10-10T06:51:05.246849 #12869]  INFO -- default-ubuntu: Setting up ruby-augeas (0.5.0-2) ...
+I, [2016-10-10T06:51:05.260983 #12869]  INFO -- default-ubuntu: Setting up libaugeas-ruby (0.5.0-2) ...
+I, [2016-10-10T06:51:05.274093 #12869]  INFO -- default-ubuntu: Setting up ruby-shadow (2.2.0-1) ...
+I, [2016-10-10T06:51:05.288070 #12869]  INFO -- default-ubuntu: Setting up ruby-json (1.8.0-1build1) ...
+I, [2016-10-10T06:51:05.301495 #12869]  INFO -- default-ubuntu: Setting up hiera (1.3.4-1puppetlabs1) ...
+I, [2016-10-10T06:51:05.320400 #12869]  INFO -- default-ubuntu: Setting up puppet-common (3.8.7-1puppetlabs1) ...
+I, [2016-10-10T06:51:05.478885 #12869]  INFO -- default-ubuntu: Processing triggers for libc-bin (2.19-0ubuntu6.9) ...
+I, [2016-10-10T06:51:05.497100 #12869]  INFO -- default-ubuntu: Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
+I, [2016-10-10T06:51:06.974694 #12869]  INFO -- default-ubuntu: Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 75%Reading package lists... 75%Reading package lists... 77%Reading package lists... 77%Reading package lists... Done
+I, [2016-10-10T06:51:07.179512 #12869]  INFO -- default-ubuntu: Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+I, [2016-10-10T06:51:07.179890 #12869]  INFO -- default-ubuntu: Reading state information... 0%Reading state information... 1%Reading state information... Done
+I, [2016-10-10T06:51:07.250007 #12869]  INFO -- default-ubuntu: Suggested packages:
+I, [2016-10-10T06:51:07.250073 #12869]  INFO -- default-ubuntu:   puppet-el vim-puppet
+I, [2016-10-10T06:51:07.250489 #12869]  INFO -- default-ubuntu: The following NEW packages will be installed:
+I, [2016-10-10T06:51:07.250533 #12869]  INFO -- default-ubuntu:   puppet
+I, [2016-10-10T06:51:07.253749 #12869]  INFO -- default-ubuntu: 0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+I, [2016-10-10T06:51:07.347509 #12869]  INFO -- default-ubuntu: Need to get 9630 B of archives.
+I, [2016-10-10T06:51:07.347566 #12869]  INFO -- default-ubuntu: After this operation, 72.7 kB of additional disk space will be used.
+I, [2016-10-10T06:51:07.502351 #12869]  INFO -- default-ubuntu: 0% [Working]            Get:1 http://apt.puppetlabs.com/ precise/main puppet all 3.8.7-1puppetlabs1 [9630 B]
+I, [2016-10-10T06:51:07.502752 #12869]  INFO -- default-ubuntu:             100% [1 puppet 9630 B/9630 B 100%]                                  100% [Working]              Fetched 9630 B in 0s (136 kB/s)
+I, [2016-10-10T06:51:07.634778 #12869]  INFO -- default-ubuntu: perl: warning: Setting locale failed.
+I, [2016-10-10T06:51:07.634841 #12869]  INFO -- default-ubuntu: perl: warning: Please check that your locale settings:
+I, [2016-10-10T06:51:07.634973 #12869]  INFO -- default-ubuntu: 	LANGUAGE = (unset),
+I, [2016-10-10T06:51:07.635017 #12869]  INFO -- default-ubuntu: 	LC_ALL = (unset),
+I, [2016-10-10T06:51:07.635035 #12869]  INFO -- default-ubuntu: 	LANG = "en_US.UTF-8"
+I, [2016-10-10T06:51:07.635149 #12869]  INFO -- default-ubuntu:     are supported and installed on your system.
+I, [2016-10-10T06:51:07.635173 #12869]  INFO -- default-ubuntu: perl: warning: Falling back to the standard locale ("C").
+I, [2016-10-10T06:51:07.668170 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_CTYPE to default locale: No such file or directory
+I, [2016-10-10T06:51:07.668317 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+I, [2016-10-10T06:51:07.668656 #12869]  INFO -- default-ubuntu: locale: Cannot set LC_ALL to default locale: No such file or directory
+I, [2016-10-10T06:51:09.352300 #12869]  INFO -- default-ubuntu: Selecting previously unselected package puppet.
+I, [2016-10-10T06:51:09.360948 #12869]  INFO -- default-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19363 files and directories currently installed.)
+I, [2016-10-10T06:51:09.361293 #12869]  INFO -- default-ubuntu: Preparing to unpack .../puppet_3.8.7-1puppetlabs1_all.deb ...
+I, [2016-10-10T06:51:09.373292 #12869]  INFO -- default-ubuntu: Unpacking puppet (3.8.7-1puppetlabs1) ...
+I, [2016-10-10T06:51:09.404858 #12869]  INFO -- default-ubuntu: Processing triggers for ureadahead (0.100.0-16) ...
+I, [2016-10-10T06:51:09.516582 #12869]  INFO -- default-ubuntu: Setting up puppet (3.8.7-1puppetlabs1) ...
+I, [2016-10-10T06:51:09.594345 #12869]  INFO -- default-ubuntu: invoke-rc.d: policy-rc.d denied execution of start.
+I, [2016-10-10T06:51:09.599933 #12869]  INFO -- default-ubuntu: Processing triggers for ureadahead (0.100.0-16) ...
+I, [2016-10-10T06:51:09.721016 #12869]  INFO -- default-ubuntu: -----> Installing Chef Omnibus to install busser to run tests
+I, [2016-10-10T06:51:09.721306 #12869]  INFO -- default-ubuntu: downloading https://www.getchef.com/chef/install.sh
+I, [2016-10-10T06:51:09.721338 #12869]  INFO -- default-ubuntu:   to file /tmp/install.sh
+I, [2016-10-10T06:51:09.721356 #12869]  INFO -- default-ubuntu: trying wget...
+I, [2016-10-10T06:51:10.174131 #12869]  INFO -- default-ubuntu: ubuntu 14.04 x86_64
+I, [2016-10-10T06:51:10.174192 #12869]  INFO -- default-ubuntu: Getting information for chef stable  for ubuntu...
+I, [2016-10-10T06:51:10.174323 #12869]  INFO -- default-ubuntu: downloading https://omnitruck-direct.chef.io/stable/chef/metadata?v=&p=ubuntu&pv=14.04&m=x86_64
+I, [2016-10-10T06:51:10.174349 #12869]  INFO -- default-ubuntu:   to file /tmp/install.sh.572/metadata.txt
+I, [2016-10-10T06:51:10.174837 #12869]  INFO -- default-ubuntu: trying wget...
+I, [2016-10-10T06:51:10.551658 #12869]  INFO -- default-ubuntu: sha1	ea771aa3cb5367393199cc342a4b3d3505085635
+I, [2016-10-10T06:51:10.551718 #12869]  INFO -- default-ubuntu: sha256	22bb016e2b5dc669e4bd46cf49ed954ad09f4bc29ff0524606ec03e25d564951
+I, [2016-10-10T06:51:10.552042 #12869]  INFO -- default-ubuntu: url	https://packages.chef.io/files/stable/chef/12.14.89/ubuntu/14.04/chef_12.14.89-1_amd64.deb
+I, [2016-10-10T06:51:10.552325 #12869]  INFO -- default-ubuntu: version	12.14.89
+I, [2016-10-10T06:51:10.553320 #12869]  INFO -- default-ubuntu: downloaded metadata file looks valid...
+I, [2016-10-10T06:51:10.558350 #12869]  INFO -- default-ubuntu: downloading https://packages.chef.io/files/stable/chef/12.14.89/ubuntu/14.04/chef_12.14.89-1_amd64.deb
+I, [2016-10-10T06:51:10.558393 #12869]  INFO -- default-ubuntu:   to file /tmp/install.sh.572/chef_12.14.89-1_amd64.deb
+I, [2016-10-10T06:51:10.558669 #12869]  INFO -- default-ubuntu: trying wget...
+I, [2016-10-10T06:51:11.293084 #12869]  INFO -- default-ubuntu: Comparing checksum with sha256sum...
+I, [2016-10-10T06:51:11.505027 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:51:11.505091 #12869]  INFO -- default-ubuntu: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2016-10-10T06:51:11.505110 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:51:11.505125 #12869]  INFO -- default-ubuntu: You are installing an omnibus package without a version pin.  If you are installing
+I, [2016-10-10T06:51:11.505254 #12869]  INFO -- default-ubuntu: on production servers via an automated process this is DANGEROUS and you will
+I, [2016-10-10T06:51:11.505279 #12869]  INFO -- default-ubuntu: be upgraded without warning on new releases, even to new major releases.
+I, [2016-10-10T06:51:11.505316 #12869]  INFO -- default-ubuntu: Letting the version float is only appropriate in desktop, test, development or
+I, [2016-10-10T06:51:11.505424 #12869]  INFO -- default-ubuntu: CI/CD environments.
+I, [2016-10-10T06:51:11.505447 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:51:11.505461 #12869]  INFO -- default-ubuntu: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2016-10-10T06:51:11.505484 #12869]  INFO -- default-ubuntu: 
+I, [2016-10-10T06:51:11.505497 #12869]  INFO -- default-ubuntu: Installing chef 
+I, [2016-10-10T06:51:11.505509 #12869]  INFO -- default-ubuntu: installing with dpkg...
+I, [2016-10-10T06:51:11.542074 #12869]  INFO -- default-ubuntu: Selecting previously unselected package chef.
+I, [2016-10-10T06:51:11.550889 #12869]  INFO -- default-ubuntu: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19369 files and directories currently installed.)
+I, [2016-10-10T06:51:11.551195 #12869]  INFO -- default-ubuntu: Preparing to unpack .../chef_12.14.89-1_amd64.deb ...
+I, [2016-10-10T06:51:11.557878 #12869]  INFO -- default-ubuntu: Unpacking chef (12.14.89-1) ...
+I, [2016-10-10T06:51:20.171694 #12869]  INFO -- default-ubuntu: Setting up chef (12.14.89-1) ...
+I, [2016-10-10T06:51:20.305748 #12869]  INFO -- default-ubuntu: Thank you for installing Chef!
+I, [2016-10-10T06:51:20.354505 #12869]  INFO -- default-ubuntu: Transferring files to <default-ubuntu>
+I, [2016-10-10T06:51:20.377814 #12869]  INFO -- default-ubuntu: Going to invoke puppet apply with:             
+            
+              export MANIFESTDIR='/tmp/kitchen/manifests'; sudo -E puppet apply /tmp/kitchen/manifests/site.pp --modulepath=/tmp/kitchen/modules --fileserverconfig=/tmp/kitchen/fileserver.conf         
+
+I, [2016-10-10T06:51:20.791380 #12869]  INFO -- default-ubuntu: [1;31mWarning: Setting templatedir is deprecated. See http://links.puppetlabs.com/env-settings-deprecations
+I, [2016-10-10T06:51:20.791448 #12869]  INFO -- default-ubuntu:    (at /usr/lib/ruby/vendor_ruby/puppet/settings.rb:1139:in `issue_deprecation_warning')[0m
+I, [2016-10-10T06:51:20.793056 #12869]  INFO -- default-ubuntu: [1;31mError: Could not run: Could not find file /tmp/kitchen/manifests/site.pp[0m
+E, [2016-10-10T06:51:20.805473 #12869] ERROR -- default-ubuntu: Converge failed on instance <default-ubuntu>.
+E, [2016-10-10T06:51:20.805569 #12869] ERROR -- default-ubuntu: ------Exception-------
+E, [2016-10-10T06:51:20.805589 #12869] ERROR -- default-ubuntu: Class: Kitchen::ActionFailed
+E, [2016-10-10T06:51:20.805601 #12869] ERROR -- default-ubuntu: Message: SSH exited (1) for command: [            
+            
+              export MANIFESTDIR='/tmp/kitchen/manifests'; sudo -E puppet apply /tmp/kitchen/manifests/site.pp --modulepath=/tmp/kitchen/modules --fileserverconfig=/tmp/kitchen/fileserver.conf         
+]
+E, [2016-10-10T06:51:20.805612 #12869] ERROR -- default-ubuntu: ----------------------
+E, [2016-10-10T06:51:20.805621 #12869] ERROR -- default-ubuntu: ------Backtrace-------
+E, [2016-10-10T06:51:20.805630 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/provisioner/base.rb:86:in `rescue in call'
+E, [2016-10-10T06:51:20.805640 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/provisioner/base.rb:89:in `call'
+E, [2016-10-10T06:51:20.805650 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:380:in `block in converge_action'
+E, [2016-10-10T06:51:20.805669 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:520:in `synchronize_or_call'
+E, [2016-10-10T06:51:20.805680 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:485:in `block in action'
+E, [2016-10-10T06:51:20.805690 #12869] ERROR -- default-ubuntu: /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2016-10-10T06:51:20.805700 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:484:in `action'
+E, [2016-10-10T06:51:20.805710 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:376:in `converge_action'
+E, [2016-10-10T06:51:20.805720 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:355:in `block in transition_to'
+E, [2016-10-10T06:51:20.805729 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:354:in `each'
+E, [2016-10-10T06:51:20.805739 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:354:in `transition_to'
+E, [2016-10-10T06:51:20.805759 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:138:in `converge'
+E, [2016-10-10T06:51:20.805770 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:201:in `public_send'
+E, [2016-10-10T06:51:20.805780 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:201:in `run_action_in_thread'
+E, [2016-10-10T06:51:20.805790 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:173:in `block (2 levels) in run_action'
+E, [2016-10-10T06:51:20.805800 #12869] ERROR -- default-ubuntu: ----End Backtrace-----
+E, [2016-10-10T06:51:20.805809 #12869] ERROR -- default-ubuntu: ---Nested Exception---
+E, [2016-10-10T06:51:20.805818 #12869] ERROR -- default-ubuntu: Class: Kitchen::Transport::SshFailed
+E, [2016-10-10T06:51:20.805827 #12869] ERROR -- default-ubuntu: Message: SSH exited (1) for command: [            
+            
+              export MANIFESTDIR='/tmp/kitchen/manifests'; sudo -E puppet apply /tmp/kitchen/manifests/site.pp --modulepath=/tmp/kitchen/modules --fileserverconfig=/tmp/kitchen/fileserver.conf         
+]
+E, [2016-10-10T06:51:20.805836 #12869] ERROR -- default-ubuntu: ----------------------
+E, [2016-10-10T06:51:20.805845 #12869] ERROR -- default-ubuntu: ------Backtrace-------
+E, [2016-10-10T06:51:20.805854 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/provisioner/base.rb:86:in `rescue in call'
+E, [2016-10-10T06:51:20.805863 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/provisioner/base.rb:89:in `call'
+E, [2016-10-10T06:51:20.805873 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:380:in `block in converge_action'
+E, [2016-10-10T06:51:20.805883 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:520:in `synchronize_or_call'
+E, [2016-10-10T06:51:20.805892 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:485:in `block in action'
+E, [2016-10-10T06:51:20.805902 #12869] ERROR -- default-ubuntu: /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2016-10-10T06:51:20.805911 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:484:in `action'
+E, [2016-10-10T06:51:20.805921 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:376:in `converge_action'
+E, [2016-10-10T06:51:20.805949 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:355:in `block in transition_to'
+E, [2016-10-10T06:51:20.805960 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:354:in `each'
+E, [2016-10-10T06:51:20.805969 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:354:in `transition_to'
+E, [2016-10-10T06:51:20.805979 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/instance.rb:138:in `converge'
+E, [2016-10-10T06:51:20.805988 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:201:in `public_send'
+E, [2016-10-10T06:51:20.805998 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:201:in `run_action_in_thread'
+E, [2016-10-10T06:51:20.806007 #12869] ERROR -- default-ubuntu: /usr/local/rvm/gems/ruby-2.3.0/gems/test-kitchen-1.13.2/lib/kitchen/command.rb:173:in `block (2 levels) in run_action'
+E, [2016-10-10T06:51:20.806017 #12869] ERROR -- default-ubuntu: ----End Backtrace-----
